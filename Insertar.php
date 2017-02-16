@@ -1,6 +1,8 @@
 <html>
     <title>Relojeria-Insertar</title>
     <head>
+        <link href="Estilos.css" rel="stylesheet">
+        <style type="text/css"></style>
     </head>
     <body>
         <?php
@@ -21,6 +23,8 @@
         
         ?>
         <br>
-        <a href="index.php">Regresar</a>
+        <br>
+        <br>
+        <a href="frmInsertar.php" class="button">Regresar</a>
     </body>
 </html>
