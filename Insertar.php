@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-       include './Conexion.php';
+       include 'Conexion.php';
         $cedula = $_POST['txtCedula'];
         $nombre = $_POST['txtNombre'];
         $apellido = $_POST['txtApellido'];
@@ -15,16 +15,14 @@
         $correo = $_POST['txtCorreo'];
 
         $insertar = "INSERT into Clientes values('$cedula','$nombre','$apellido','$telefono','$direccion','$correo')";
-        $resultado = mysqli_query($conexion,$insertar)
-                or die("error al insertar");
-        echo 'Datos Insertados';
-        mysqli_close($conexion);
-        
-        
+        $resultado = $conexion->query($insertar);
+        if($resultado){
+            header("location: TablaClientes.php");
+        }
+        else{
+            echo 'Dato no insertado';
+        }
         ?>
-        <br>
-        <br>
-        <br>
-        <a href="frmInsertar.php" class="button">Regresar</a>
+        
     </body>
 </html>
